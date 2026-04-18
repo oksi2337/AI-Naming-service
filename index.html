@@ -484,6 +484,20 @@
         </div>
     </section>
 
+    <!-- 댓글 (Disqus) -->
+    <section class="py-24 bg-premium-light border-t border-gray-100">
+        <div class="max-w-3xl mx-auto px-5">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="text-premium-gold font-bold tracking-widest uppercase text-sm mb-2 block">Comments</span>
+                <h2 class="font-serif text-3xl font-bold text-gray-900">댓글</h2>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="100">
+                <div id="disqus_thread"></div>
+                <noscript>댓글을 보려면 JavaScript를 활성화해 주세요. <a href="https://disqus.com/?ref_noscript">Disqus 댓글 보기</a></noscript>
+            </div>
+        </div>
+    </section>
+
     <footer class="py-10 border-t border-gray-200 text-center bg-white">
         <div class="max-w-6xl mx-auto px-5">
             <div class="font-serif text-2xl font-black text-gray-300 mb-2">名作</div>
@@ -499,6 +513,18 @@
             if (window.scrollY > 10) nav.classList.add('shadow-sm');
             else nav.classList.remove('shadow-sm');
         });
+
+        // ─── Disqus ───
+        var disqus_config = function () {
+            this.page.url = 'https://oksi2337.github.io/AI-Naming-service/';
+            this.page.identifier = 'ai-naming-service-main';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://productbuilder-wylbp0v8ap.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
 
         // ─── Formspree AJAX 전송 ───
         const contactForm = document.getElementById('contact-form');
